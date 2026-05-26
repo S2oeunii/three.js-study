@@ -1,6 +1,6 @@
 import { Canvas } from '@react-three/fiber'
 import React from 'react'
-import { Box, Cone, Cylinder, MeshTransmissionMaterial, Sphere, Torus } from '@react-three/drei'
+import { Box, Cone, Cylinder, Environment, MeshTransmissionMaterial, OrbitControls, Sky, Sphere, Torus } from '@react-three/drei'
 
 const Three01 = () => {
 
@@ -63,6 +63,15 @@ const Three01 = () => {
                     opacity={0.8}
                 />
             </Torus>
+
+            {/* 카메라 조작 컴포넌트 */}
+            <OrbitControls />
+
+            {/* 실시간 하늘과 태양의 위치 반영하는 배경 */}
+            <Sky sunPosition={[100, 20, 100]} />
+
+            {/* 주변 환경 설정 */}
+            <Environment preset='sunset' />
         </Canvas>
     </div>
   )
